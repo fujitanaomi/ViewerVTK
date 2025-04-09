@@ -1,0 +1,32 @@
+﻿<Window x:Class="KasandraViewerVTK.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        Title="Kasandra VTK" Height="600" Width="1000">
+  <DockPanel>
+
+    <!-- Botones arriba -->
+    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
+      <Button Content="Cargar archivo" Click="CargarArchivo_Click" Margin="0,0,10,0" Width="150" Height="30"/>
+      <Button Content="Ver corte" Click="VerCorte_Click" Margin="0,0,10,0" Width="150" Height="30"/>
+      <Button Content="Aplicar Threshold" Click="AplicarThreshold_Click" Margin="0,0,10,0" Width="170" Height="30"/>
+      <Button Content="Colorear por escalar" Click="ColorearPorEscalar_Click" Margin="0,0,10,0" Width="170" Height="30"/>
+      <ComboBox x:Name="ScalarsComboBox" Width="200" Visibility="Collapsed" SelectionChanged="ScalarsComboBox_SelectionChanged"/>
+    </StackPanel>
+    <!--<StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
+      <TextBlock Text="Escalar:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+      <ComboBox x:Name="ScalarComboBox" Width="200" Margin="0,0,10,0"/>
+      <Button Content="Aplicar escalar" Click="AplicarEscalar_Click" Width="150"/>
+    </StackPanel>-->
+
+    <!-- Slider de corte --><!--
+    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
+      <TextBlock Text="Corte Z:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+      <Slider x:Name="CorteSlider" Minimum="0" Maximum="80" Value="0" Width="300" ValueChanged="CorteSlider_ValueChanged"/>
+    </StackPanel>-->
+
+    <!-- Visualizador VTK -->
+    <wfi:WindowsFormsHost Name="vtkHost" />
+
+  </DockPanel>
+</Window>
